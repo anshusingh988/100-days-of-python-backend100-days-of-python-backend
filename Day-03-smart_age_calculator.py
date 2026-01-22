@@ -209,3 +209,4 @@ quiz_result.pack(pady=8)
 
 # ---------------- RUN ----------------
 root.mainloop()
+
