@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "text": "What is the capital of France?",
+    "options": ["Berlin", "Madrid", "Paris", "Lisbon"],
+    "answer": "Paris"
+  },
+  {
+    "id": 2,
+    "text": "Which language is used for web apps?",
+    "options": ["PHP", "Python", "JavaScript", "All of the above"],
+    "answer": "All of the above"
+  },
+  {
+    "id": 3,
+    "text": "What is 2 + 2?",
+    "options": ["3", "4", "5", "6"],
+    "answer": "4"
+  }
+]
