@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+streamlit
+sentence-transformers
+torch
+numpy
+pandas
+python-multipart
+sqlalchemy
+python-dotenv
+pdfplumber

@@ -61,5 +61,9 @@ def submit_quiz():
         'message': f'You scored {score} out of {total}'
     })
 
+@app.route('/')
+def home():
+    return "<h1>Quiz API is running!</h1><p>Use <a href='/api/questions'>/api/questions</a> to get questions.</p>"
+
 if __name__ == '__main__':
     app.run(debug=True)
