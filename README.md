@@ -12,7 +12,6 @@ The projects are organized by day:
 - **Day-04-Even-Odd-Prime**: Logic for checking even, odd, and prime numbers.
 - **Day-05-Student-Grade-System**: A Python-based student grading system.
 - **Day-06-Quiz-API**: An API project for quizzes.
-
-There is also a separate **Job-Recommendation-Agent** directory containing a specialized backend project.
+- **Day-07-AI-Career-Assistant**: An AI-powered Job Recommendation Agent and Career Assistant.
 
 Happy coding!
