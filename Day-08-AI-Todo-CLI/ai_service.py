@@ -1,49 +1,41 @@
-import os
-import google.generativeai as genai
-from dotenv import load_dotenv
+import random
 
-load_dotenv()
-api_key = os.getenv("GEMINI_API_KEY")
+def analyze_task(title):
+    title_lower = title.lower()
 
-if api_key and api_key != "your_api_key_here":
-    genai.configure(api_key=api_key)
+    categories = {
+        "Work": ["project", "study", "assignment", "code", "meeting"],
+        "Health": ["gym", "exercise", "run", "yoga"],
+        "Personal": ["buy", "shopping", "family", "call"],
+    }
 
-def analyze_task(task_title):
-    if not api_key or api_key == "your_api_key_here":
-        return {
-            "category": "Uncategorized",
-            "priority": "Medium",
-            "subtasks": []
-        }
-    
-    prompt = f'''
-    Analyze the following to-do list task: "{task_title}"
-    Break it down into 3-5 actionable subtasks if it's a large task.
-    Assign a category (Work, Personal, Urgent, Health, etc.).
-    Assign a priority (High, Medium, Low).
-    
-    Return the response strictly as a JSON object with this exact structure:
-    {{
-        "category": "string",
-        "priority": "string",
-        "subtasks": ["subtask 1", "subtask 2"]
-    }}
-    '''
-    
-    try:
-        model = genai.GenerativeModel('gemini-1.5-flash')
-        response = model.generate_content(prompt)
-        import json
-        text = response.text.strip()
-        if text.startswith('`json'):
-            text = text[7:-3]
-        elif text.startswith('`'):
-            text = text[3:-3]
-        return json.loads(text)
-    except Exception as e:
-        print(f"Error calling AI: {e}")
-        return {
-            "category": "Uncategorized",
-            "priority": "Medium",
-            "subtasks": []
-        }
+    category = "General"
+    for cat, keywords in categories.items():
+        if any(word in title_lower for word in keywords):
+            category = cat
+            break
+
+    if any(word in title_lower for word in ["urgent", "asap", "deadline"]):
+        priority = "High"
+    elif category == "Work":
+        priority = "High"
+    elif category == "Health":
+        priority = "Medium"
+    else:
+        priority = "Low"
+
+    subtasks_templates = [
+        f"Plan for {title}",
+        f"Start {title}",
+        f"Work on {title}",
+        f"Review {title}",
+        f"Complete {title}"
+    ]
+
+    subtasks = random.sample(subtasks_templates, 3)
+
+    return {
+        "category": category,
+        "priority": priority,
+        "subtasks": subtasks
+    }

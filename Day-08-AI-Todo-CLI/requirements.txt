@@ -1,4 +1,0 @@
-click
-google-generativeai
-python-dotenv
-rich
