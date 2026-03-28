@@ -1,0 +1,23 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run Pro Expense Tracker (Both Servers)",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "npm run dev",
+            "cwd": "${workspaceFolder}/Day-09-Expense-Tracker/frontend",
+            "autoAttachChildProcesses": true,
+            "preLaunchTask": "Start Backend"
+        },
+        {
+            "name": "Backend Only (Flask)",
+            "type": "python",
+            "request": "launch",
+            "program": "app.py",
+            "cwd": "${workspaceFolder}/Day-09-Expense-Tracker/backend",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        }
+    ]
+}
