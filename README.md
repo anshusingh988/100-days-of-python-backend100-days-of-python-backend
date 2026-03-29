@@ -14,5 +14,6 @@ The projects are organized by day:
 - **Day-06-Quiz-API**: An API project for quizzes.
 - **Day-07-AI-Career-Assistant**: An AI-powered Job Recommendation Agent and Career Assistant.
 - **Day-08-AI-Todo-CLI**: An AI-integrated To-Do List CLI that breaks down vague tasks into actionable subtasks.
+- **Day-09-Expense-Tracker**: A full-stack (Flask/React) Pro Expense Tracker with dark-themed dashboard, data visualization, and transaction management.
 
 Happy coding!

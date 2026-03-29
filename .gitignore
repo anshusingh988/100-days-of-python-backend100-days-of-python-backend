@@ -1,6 +1,25 @@
+# Python
 .venv/
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
 *.db
 .env
-.DS_Store
+
+# Node
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Project specific
+data.db
+Day-09-Expense-Tracker/backend/data.db
+Day-09-Expense-Tracker/backend/.env
+Day-09-Expense-Tracker/frontend/node_modules/
